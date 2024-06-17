@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+:root{
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    font-size: 13px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--Light-Grayish-Blue);
+}
+img{
+    display: block;
+    width: 100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex;
+    width: 730px;
+    height: 280px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem hsl(217, 19%, 35%, 0.2);
+}
+.card__img{
+    width: 39%;
+    background-image: url(./images/drawers.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px 0 0 15px;
+}
+.card__content{
+    width: 61%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 0 15px 15px 0;
+}
+.card__title{
+    font-size: 20px;
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+}
+.card__paragraph{
+    line-height: 1.5;
+    color: var(--Desaturated-Dark-Blue);
+}
+.card__person{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.person__info{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.person__info img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+.person__name{
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+.person__date{
+    color: var(--Grayish-Blue);
+}
+.btn{
+    border: 0;
+    width: 34px;
+    height: 34px;
+    padding: 9px;
+    border-radius: 50%;
+    background-color: var(--Light-Grayish-Blue);
+    cursor: pointer;
+}
+
+/* Share dialog*/
+.showbox{
+    position: absolute;
+}
+.share__container{
+    display: block;
+}
+.share__dialog{
+    width: 248px;
+    height: 55px;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem hsl(217, 19%, 35%, 0.2);
+    position: relative;
+}
+.share__dialog::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    transform: rotate(45deg);
+    bottom: -8px;
+    z-index: 0;
+}
+.share__dialog p{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--Grayish-Blue);
+}
+.share__dialog img{
+    width: 20px;
+    cursor: pointer;
+}
+.btn__check{
+    display: none;
+}
+.btn__check:checked+.btn{
+    background-color: var(--Desaturated-Dark-Blue);
+}
+.btn__check:checked+.btn svg{
+    fill: white;
+}
+.check__container{
+    z-index: 10;
+}
+.bg--white{
+    background-color: white;
+}
+.bg--dark{
+    background-color: var(--Very-Dark-Grayish-Blue);
+}
+@media screen and (max-width: 745px) {
+    
+    .card{
+        width: 328px;
+        height: auto;
+        flex-direction: column;
+        position: relative;
+        
+    }
+    .card__img, .card__content{
+        width: 100%;
+        padding: 0;
+    }
+    .card__img{
+        height: 200px;
+        border-radius: 15px 15px 0 0;
+    }
+    .card__title, .card__paragraph{
+        margin-inline: 2rem;
+        
+    }
+    .card__title{
+        font-size: 1rem;
+        line-height: 1.5;
+        padding-right: 0.5rem;
+    }
+    .card__paragraph{
+        padding-right: 0.5rem;
+    }
+    .card__content{
+        padding-top: 2rem;
+        gap: 1.5rem;
+        border-radius: 0 0 15px 15px;
+        
+    }
+    .share__container{
+        width: 100%;
+        top: calc(100% - 65px);
+        left: 0;
+
+    }
+    .share__dialog{
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        width: inherit;
+        height: 65px;
+        border-radius: 0 0 15px 15px;
+        justify-content: flex-start;
+        
+    }
+    .share__dialog::after{
+        display: none;
+    }
+    .card__person{
+        width: 100%;
+        height: 65px;
+        padding: 1rem 2rem;
+        border-radius: 0 0 15px 15px;
+    }
+    .btn{
+        width: 24px;
+        height: 24px;
+    }
+    .btn__check:checked+.btn{
+        background-color: var(--Desaturated-Dark-Blue);
+    }
+    .btn__check:checked+.btn svg{
+        fill: white;
+    }
+}
+.hidden{
+    display: none;
+}
